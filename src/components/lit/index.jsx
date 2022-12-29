@@ -4,6 +4,9 @@ const Lit = () => {
     const [isLit, setIsLit] = useState(false)
     return <div
         // style={
+        //     isLit ? { backgroundColor: 'black', } : null
+        // }
+        // style={
         //     {
         //         color: 'red',
         //         backgroundColor: isLit ? 'black' : null,
