@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 const Products = () => {
     const [products, setProducts] = useState([])
@@ -14,10 +15,10 @@ const Products = () => {
         }
     }
 
-    // useEffect(() => {
-    //     getProducts()
-    //     // console.log(window. matchMedia('(prefers-color-scheme: dark)'));
-    // }, [])
+    useEffect(() => {
+        getProducts()
+        // console.log(window. matchMedia('(prefers-color-scheme: dark)'));
+    }, [])
 
     return <div>
         <h2>Product List</h2>
@@ -28,7 +29,8 @@ const Products = () => {
                     border: "1px solid gray",
                     marginBottom: 5
                 }} >
-                    <h3>Product : {product?.title}</h3>
+                    {/* <h3>Product : <Link to={`/product/${product.id}`} >{product?.title}</Link></h3> */}
+                    <h3>Product : <Link to={`${product.id}`} >{product?.title}</Link></h3>
                     <p>Desc : {product?.description}</p>
                     <p>Price :{product?.price}</p>
                 </div>
