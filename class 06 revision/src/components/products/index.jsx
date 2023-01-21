@@ -3,12 +3,12 @@ import axios from "axios"
 import { Link } from "react-router-dom"
 
 const Products = (props) => {
-    console.log(props);
+    console.log(props.api);
     const [products, setProducts] = useState([])
 
     const getProducts = async () => {
         try {
-            const result = await axios.get('https://dummyjson.com/products')
+            const result = await axios.get(props.api)
             // console.log(result.data.products)
             setProducts(result.data.products)
         } catch (error) {
@@ -17,7 +17,7 @@ const Products = (props) => {
     }
 
     useEffect(() => {
-        // getProducts()
+        getProducts()
         // console.log(window. matchMedia('(prefers-color-scheme: dark)'));
     }, [])
 
